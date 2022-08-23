@@ -793,7 +793,7 @@ exports.register('ITEM-LINKBODY', through.ctor({ objectMode: true }, function (i
   if (item.bodyType === 'image') {
     item.html = '<img src="' + url + '">';
   } else {
-    item.html = "<a target='_blank' class='imagetag file' href=\"" + url + '">' + item.bodyName + '</a>';
+    item.html = "<a target='_blank' class='imagetag file' href=\"" + url + '">' + ArkimeUtil.safeStr(item.bodyName) + '</a>';
   }
   callback(null, item);
 }));
